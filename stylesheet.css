@@ -41,6 +41,18 @@ h1{
 }
 .keySpace{
     display: flex;
+    height:20rem;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+}
+.kr1,.kr2,.kr3,.kr4,.kr5{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    border: 2px solid red;
 }
