@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4e4ba;
+}
+.container{
+    height: 35rem;
+    width: 25rem;
+    margin-top: 1rem;
+    background-color: whitesmoke;
+    border: 2px solid white;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+h1{
+    font-size: 2.25rem;
+}
+.mode{
+    display: block;
+    display: flex;
+    align-items: center;
+    height: 3.75rem;
+    width: 100%;
+    border: 2px solid red;
+}
+.resltSpace{
+    display: block;
+    height: 12rem;
+    width: 100%;
+    border: 2px solid red;
+}
+.keySpace{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
