@@ -8,16 +8,16 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f4e4ba;
+    background-color:  #4a5a78;;
 }
 .container{
-    height: 37rem;
-    width: 25rem;
+    height: 38rem;
+    width: 22rem;
     /* margin: 3rem; */
     margin-top: 10px;
     background-color: whitesmoke;
     border: 2px solid white;
-    border-radius: 5%;
+    border-radius: 6%;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -25,6 +25,7 @@ body{
 }
 h1{
     font-size: 2.25rem;
+    color: white;
 }
 .mode{
     gap: 5px;
@@ -37,13 +38,14 @@ h1{
     width: 100%;
 }
 .icon{
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
     height:1.8rem;
     width:4.5rem;
-    border: 2px solid grey;
-    border-radius:20%;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius:15%;
     padding:1px;
 }
 
@@ -51,13 +53,19 @@ h1{
     display: block;
     height: 12rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    margin-bottom: 1.5rem;
+    margin-right: 3rem;
     /* border: 2px solid red; */
 }
 .keySpace{
     display: flex;
     height:20rem;
     width: 100%;
-    gap: 8px;
+    gap: 0px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -67,15 +75,42 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 3.90rem;
+    gap: 20px;
+    height: 4rem;
     width: 95%;
     /* border: 2px solid red; */
 }
 .keySpace button{
+    box-shadow:0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px gray;
     font-size: 2.25rem;
     height: 3.7rem;
     width: 3.7rem;
-    margin-bottom: 10px;
-    border: 2px solid black;
+    
+    margin-bottom: 0px;
+    border: 2px solid white;
     border-radius: 50%;
+}
+#long{
+    margin-top: 10px;
+    margin-left: 13px;
+    width: 8.5rem;
+    border-radius: 15%;
+    align-self: center;
+    border: none;
+}
+.operator{
+    background-color: #ffb400;
+    box-shadow: none;
+}
+.opt{
+    background-color: grey;
+    border: none;
+}
+#result{
+    font-size: 3.1rem;
+    text-shadow: 2px 2px 5px gray;
+}
+#input{
+    font-size: 1.9rem;
 }
