@@ -73,6 +73,15 @@ keys.forEach((button) => {
         exp=exp.slice(0,-1);
         input.innerText=exp;
     }
+    if(value=="+/-"){
+      let exp = input.innerText;
+      if (exp === "") return;
+      if (exp.startsWith("-")) {
+        input.innerText = exp.slice(1);
+      } else {
+        input.innerText = "-" + exp;
+      }
+    }
     if (value == "=") {
       let exp = input.innerText;
       if(exp.includes("+")){
