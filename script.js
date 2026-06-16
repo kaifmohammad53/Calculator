@@ -52,7 +52,7 @@ modes.addEventListener("click", () => {
 
 let input = document.querySelector("#input");
 let result = document.querySelector("#result");
-
+let justCalc = false;
 keys.forEach((button) => {
   button.addEventListener("click", () => {
     let value = button.innerText;
@@ -61,7 +61,12 @@ keys.forEach((button) => {
       value !== "->" &&
       value !== "=" &&
       value !== "+/-"
-    ) {
+    ){
+      if (justCalc) {
+        input.innerText = "";
+        result.innerText = "";
+        justCalc = false;
+      }
       input.innerText += value;
     }
     if (value == "AC") {
@@ -82,33 +87,21 @@ keys.forEach((button) => {
         input.innerText = "-" + exp;
       }
     }
+    
     if (value == "=") {
       let exp = input.innerText;
-      if(exp.includes("+")){
-        let parts = exp.split("+");
-        let a = Number(parts[0]);
-        let b = Number(parts[1]);
-        result.innerText = a + b;
+      let nums = exp.split(/[+\-*/]/);
+      let ops = exp.match(/[+\-*/]/g);
+      let ans = Number(nums[0]);
+      for (let i = 0; i < ops.length; i++) {
+        let num = Number(nums[i + 1]);
+        if (ops[i] === "+") ans += num;
+        if (ops[i] === "-") ans -= num;
+        if (ops[i] === "*") ans *= num;
+        if (ops[i] === "/") ans /= num;
       }
-      if (exp.includes("-")) {
-        let parts = exp.split("-");
-        let a = Number(parts[0]);
-        let b = Number(parts[1]);
-        result.innerText = a - b;
-      }
-      if (exp.includes("/")) {
-        let parts = exp.split("/");
-        let a = Number(parts[0]);
-        let b = Number(parts[1]);
-        result.innerText = (a / b).toFixed(4);
-      }
-      if (exp.includes("*")) {
-        let parts = exp.split("*");
-        let a = Number(parts[0]);
-        let b = Number(parts[1]);
-        result.innerText = a * b;
-      }
-      
+      result.innerText = ans.toFixed(4);;
+      justCalc=true;
     }
   });
 });
