@@ -5,9 +5,9 @@ let container = document.querySelector(".container");
 let heading = document.querySelector("h1");
 let keys = document.querySelectorAll(".keySpace button");
 let resltspace = document.querySelector(".resltSpace");
-let icon=document.querySelector(".icon");
+let icon = document.querySelector(".icon");
 let operator = document.querySelectorAll(".operator");
-let opt=document.querySelectorAll(".opt");
+let opt = document.querySelectorAll(".opt");
 
 mode.addEventListener("click", () => {
   body.style.backgroundColor = "whitesmoke";
@@ -25,7 +25,7 @@ mode.addEventListener("click", () => {
     });
     opt.forEach((opt) => {
       opt.style.backgroundColor = "white";
-      opt.style.color="grey";
+      opt.style.color = "grey";
     });
   });
 });
@@ -36,7 +36,7 @@ modes.addEventListener("click", () => {
   heading.style.color = "white";
   resltspace.style.color = "black";
   icon.style.color = "black";
-  icon.style.border="2px solid rgba(0, 0, 0, 0.3)";
+  icon.style.border = "2px solid rgba(0, 0, 0, 0.3)";
   keys.forEach((button) => {
     button.style.color = "black";
     button.style.backgroundColor = "white";
@@ -44,8 +44,41 @@ modes.addEventListener("click", () => {
     operator.forEach((op) => {
       op.style.backgroundColor = "#ffb400";
     });
-    opt.forEach((opt)=>{
-        opt.style.backgroundColor="grey";
+    opt.forEach((opt) => {
+      opt.style.backgroundColor = "grey";
     });
+  });
+});
+
+let input = document.querySelector("#input");
+let result = document.querySelector("#result");
+
+keys.forEach((button) => {
+  button.addEventListener("click", () => {
+    let value = button.innerText;
+    if (
+      value !== "AC" &&
+      value !== "->" &&
+      value !== "=" &&
+      value !== "+/-"
+    ) {
+      input.innerText += value;
+    }
+    if (value == "AC") {
+      input.innerText = "";
+      result.innerText = "";
+    }
+    if(value=="->"){
+        let exp=input.innerText;
+        exp=exp.slice(0,-1);
+        input.innerText=exp;
+    }
+    if (value == "=") {
+      let exp = input.innerText;
+      let parts = exp.split("+");
+      let a=Number(parts[0]);
+      let b=Number(parts[1]);
+      result.innerText= (a)+(b);
+    }
   });
 });
