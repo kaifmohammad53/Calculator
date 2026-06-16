@@ -1,0 +1,51 @@
+let mode = document.querySelector("#moon");
+let modes = document.querySelector("#sun");
+let body = document.querySelector("body");
+let container = document.querySelector(".container");
+let heading = document.querySelector("h1");
+let keys = document.querySelectorAll(".keySpace button");
+let resltspace = document.querySelector(".resltSpace");
+let icon=document.querySelector(".icon");
+let operator = document.querySelectorAll(".operator");
+let opt=document.querySelectorAll(".opt");
+
+mode.addEventListener("click", () => {
+  body.style.backgroundColor = "whitesmoke";
+  container.style.backgroundColor = "#081b31";
+  heading.style.color = "#081b31";
+  resltspace.style.color = "white";
+  icon.style.color = "white";
+  icon.style.border = "2px solid rgba(255, 255, 255, 0.3)";
+  keys.forEach((button) => {
+    button.style.color = "white";
+    button.style.backgroundColor = "#081b31";
+    button.style.border = "2px solid black";
+    operator.forEach((op) => {
+      op.style.backgroundColor = "#ffb400";
+    });
+    opt.forEach((opt) => {
+      opt.style.backgroundColor = "white";
+      opt.style.color="grey";
+    });
+  });
+});
+
+modes.addEventListener("click", () => {
+  body.style.backgroundColor = "#081b31";
+  container.style.backgroundColor = "whitesmoke";
+  heading.style.color = "white";
+  resltspace.style.color = "black";
+  icon.style.color = "black";
+  icon.style.border="2px solid rgba(0, 0, 0, 0.3)";
+  keys.forEach((button) => {
+    button.style.color = "black";
+    button.style.backgroundColor = "white";
+    button.style.border = "2px solid white";
+    operator.forEach((op) => {
+      op.style.backgroundColor = "#ffb400";
+    });
+    opt.forEach((opt)=>{
+        opt.style.backgroundColor="grey";
+    });
+  });
+});

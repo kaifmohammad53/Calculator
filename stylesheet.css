@@ -86,7 +86,8 @@ h1{
     font-size: 2.25rem;
     height: 3.7rem;
     width: 3.7rem;
-    
+    color:black;
+    /* background-color:whitesmoke; */
     margin-bottom: 0px;
     border: 2px solid white;
     border-radius: 50%;
