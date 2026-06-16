@@ -75,10 +75,31 @@ keys.forEach((button) => {
     }
     if (value == "=") {
       let exp = input.innerText;
-      let parts = exp.split("+");
-      let a=Number(parts[0]);
-      let b=Number(parts[1]);
-      result.innerText= (a)+(b);
+      if(exp.includes("+")){
+        let parts = exp.split("+");
+        let a = Number(parts[0]);
+        let b = Number(parts[1]);
+        result.innerText = a + b;
+      }
+      if (exp.includes("-")) {
+        let parts = exp.split("-");
+        let a = Number(parts[0]);
+        let b = Number(parts[1]);
+        result.innerText = a - b;
+      }
+      if (exp.includes("/")) {
+        let parts = exp.split("/");
+        let a = Number(parts[0]);
+        let b = Number(parts[1]);
+        result.innerText = (a / b).toFixed(4);
+      }
+      if (exp.includes("*")) {
+        let parts = exp.split("*");
+        let a = Number(parts[0]);
+        let b = Number(parts[1]);
+        result.innerText = a * b;
+      }
+      
     }
   });
 });

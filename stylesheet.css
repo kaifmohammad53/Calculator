@@ -59,6 +59,8 @@ h1{
     align-items: end;
     margin-bottom: 1.5rem;
     margin-right: 3rem;
+    width: 90%;
+    overflow: hidden;
     /* border: 2px solid red; */
 }
 .keySpace{
@@ -111,6 +113,10 @@ h1{
 #result{
     font-size: 3.1rem;
     text-shadow: 2px 2px 5px gray;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #input{
     font-size: 1.9rem;
